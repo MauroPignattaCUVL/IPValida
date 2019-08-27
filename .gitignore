@@ -1,0 +1,6 @@
+.dep.inc
+Makefile
+nbproject
+dist
+build
+tests
