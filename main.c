@@ -13,6 +13,6 @@ int main(int argc, char** argv) {
         printf("%s es una IP valida.",IP);
     else
         printf("%s no es una IP valida.",IP);
-    return 0;
+    return 1;
 }
 

@@ -2,13 +2,13 @@
 
 bool noHay3Puntos(char const *ip)
 {
-    int cont=0;
+    int contador=0;
     while (* ip )
     {
-        cont += (*ip=='.') ? 1 : 0 ;
+        contador += (*ip=='.') ? 1 : 0 ;
         ip++;
     }
-    bool trespuntos = cont != 3? true : false;
+    bool trespuntos = contador != 3? true : false;
     return trespuntos;
 }
 
