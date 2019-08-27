@@ -4,7 +4,6 @@
 
 #define LONG_IP 15
 
-
 int main(int argc, char** argv) {
 
     char IP[LONG_IP+1];
