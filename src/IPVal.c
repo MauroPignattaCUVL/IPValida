@@ -23,23 +23,22 @@ bool contieneLetras(char const *ip)
     return HayLetras;
 }
 
-bool octetoValido(char const *ip)
+bool octetoInvalido(char const *ip)
 {
     char octeto[4];
-    int n = 0;
     int i = 0;
     bool octetoInvalido = false;
     while (*ip && !octetoInvalido)
     {
         if (*ip != '.' && i <= 3)
         {
-            * ( octeto + i ) = *ip;
+            octeto[i] = *ip;
             i++;
         }
         else if (*ip == '.' && i <= 3)
         {
-            *( octeto + i ) = '\0';
-            n = atoi(octeto);
+            octeto[i] = '\0';
+            int numero = atoi(octeto);
             octetoInvalido = (n >= 0 && n < 256) ? false: true;
             i = 0;
         }
@@ -56,7 +55,7 @@ bool verificarValidezIP(char const *ip)
 {
     bool ipValida=true;
     
-    if (noHay3Puntos(ip) || contieneLetras(ip) || octetoValido(ip))
+    if (noHay3Puntos(ip) || contieneLetras(ip) || octetoInvalido(ip))
     {
         ipValida = false;
     }
