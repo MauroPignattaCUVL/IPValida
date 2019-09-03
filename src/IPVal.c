@@ -26,21 +26,21 @@ bool contieneLetras(char const *ip)
 bool octetoInvalido(char const *ip)
 {
     char octeto[4];
-    int i = 0;
+    int contDigitos = 0;
     bool octetoInvalido = false;
     while (*ip && !octetoInvalido)
     {
-        if (*ip != '.' && i <= 3)
+        if (*ip != '.' && contDigitos <= 3)
         {
-            octeto[i] = *ip;
-            i++;
+            octeto[cantDigitos] = *ip;
+            contDigitos++;
         }
-        else if (*ip == '.' && i <= 3)
+        else if (*ip == '.' && contDigitos <= 3)
         {
-            octeto[i] = '\0';
+            octeto[contDigitos] = '\0';
             int numero = atoi(octeto);
-            octetoInvalido = (n >= 0 && n < 256) ? false: true;
-            i = 0;
+            octetoInvalido = (numero >= 0 && numero < 256) ? false: true;
+            contDigitos = 0;
         }
         else 
         {
